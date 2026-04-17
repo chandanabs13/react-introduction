@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>React JS Learning</title>
+  </head>
+  <body>
+    <h1>Hello World outside root</h1>
+    <div id="root">
+      <h1>Hello World</h1>
+      <h1 id="heading1"></h1>
+      // using html
+      <!-- using javascript -->
+      <script>
+        const heading = document.createElement("h1");
+        heading.innerHTML = "Hello World react js";
+
+        // to insert heading inside div where id is root
+        const root = document.getElementById("root");
+        root.appendChild(heading);
+      </script>
+      <!-- using javascript another way-->
+      <script>
+        document.getElementById("heading1").innerHTML = "Hello World another react js";
+      </script>
+
+      <!-- to add cdn link that is bringinging or injecting react into our code  -->
+
+      <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+      <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+      <!-- code starts using react  -->
+      <script>
+        // const heading2 = React.createElement("h1", {}, "Hello Chandana");
+        const root1 = ReactDOM.createRoot(document.getElementById("heading1"));
+        root1.render("hello react js chandana");
+      </script>
+      <!-- other way of writing code  -->
+      <script>
+        const heading3 = React.createElement("h1", {}, "Another way of writing React JS");
+        const root3 = ReactDOM.createRoot(document.getElementById("root"));
+        root3.render(heading3);
+      </script>
+      <!-- writing js in .js file  -->
+      <script src="./App.js"></script>
+    </div>
+  </body>
+</html>
